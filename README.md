@@ -13,27 +13,32 @@ Open PowerShell and run:
 
 ```powershell
 notepad $env:USERPROFILE\.ssh\config
-
+```
 If the file doesn't exist, it will be created.
 Then, paste this:
 
+```
 Host github.com
     Hostname ssh.github.com
     Port 443
     User git
+```
+Save and close the file then run the **port443.ps1** script in the directory where you have all your GitHub repositories so they use port 443 instead of 22 using this command:
 
-Run the port443.ps1 script in the directory where you have all your GitHub repositories so they use port 443 instead of 22 using this command:
-
+```
 ./port443.ps1
+```
 
 Finally, go to any repository path and run:
 
+```
 git remote -v
+```
 
 You should see something like this showing the port it will use from now on:
 
-origin  ssh://git@ssh.github.com:443/username/repository.git (fetch)
-origin  ssh://git@ssh.github.com:443/username/repository.git (push)
+origin  ssh://git@ssh.github.com:**443**/username/repository.git (fetch)
+origin  ssh://git@ssh.github.com:**443**/username/repository.git (push)
 
 💡 Credits
 
